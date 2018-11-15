@@ -24,10 +24,17 @@ x = cos(2*pi*n/14) + 0.1*sin(4*pi*n/15);
 wk = kaiser(R,beta);
 XK = transpose(fft(wk.*x', R));
 XR = transpose(fft(rectwin(R).*x', R));
+
+fprintf('\n The chosen parameters are as follows:')
+fprintf('\n deltaw = %d',deltaw)
+fprintf('\n beta = %d',beta)
+fprintf('\n N = R = %d',N)
 figure()
-subplot(1,2,1)
+ax1 = subplot(1,2,1);
 plot(n, abs(XR),'-o')
 title('x windowed by rectangular window');
-subplot(1,2,2)
+set(ax1,'xlim',[0 N])
+ax2 = subplot(1,2,2);
 plot(n, abs(XK),'-ro')
 title('x windowed by kaiser window');
+set(ax2,'xlim',[0 N])

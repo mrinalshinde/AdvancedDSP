@@ -35,7 +35,7 @@ noteSequence = [Do Re Mi Fa So La Ti];
 player1 = audioplayer (noteSequence, fs);
 play (player1)
 %%%% 
-N = 1024; %to get better freq resolution
+N = 2^14; %to get better freq resolution
 x = Do + Re + Mi + Fa + So + La + Ti;
 fftout = fft(x, N);
 onesided_fft = 2*fftout(1:N/2+1);
