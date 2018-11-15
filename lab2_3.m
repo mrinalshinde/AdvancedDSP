@@ -34,6 +34,7 @@ noteSequence = [Do Re Mi Fa So La Ti];
 % soundsc (noteSequence, fs)
 player1 = audioplayer (noteSequence, fs);
 play (player1)
+
 N = 1024;
 x = Do + Re + Mi + Fa + So + La + Ti;
 fftout = fft(x, N);
