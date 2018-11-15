@@ -18,7 +18,7 @@ L = (24*pi*(Asl+12))/(155*dml) + 1;
 R = 2^ceil(log2(L));
 
 n = 0:R-1;
-x = 2*sin(2*pi*n/14) + 0.02*sin(4*pi*n/15);
+x = 2*sin(2*pi*n/14) + 0.1*sin(4*pi*n/15);
 kwind = kaiser(R,b);
 rwind = rectwin(R);
 
