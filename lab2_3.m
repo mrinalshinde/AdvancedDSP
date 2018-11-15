@@ -34,17 +34,19 @@ noteSequence = [Do Re Mi Fa So La Ti];
 % soundsc (noteSequence, fs)
 player1 = audioplayer (noteSequence, fs);
 play (player1)
-
-N = 1024;
+%%%% 
+N = 1024; %to get better freq resolution
 x = Do + Re + Mi + Fa + So + La + Ti;
 fftout = fft(x, N);
 onesided_fft = 2*fftout(1:N/2+1);
 mag = abs(onesided_fft);
 f_axis = fs/N*[0:N/2];
-figure(2)
+figure()
 subplot(2,1,1)
-plot(f_axis, mag);
+plot(f_axis, mag)
 title('Magnitude Spectrum using DFT');
+xlabel( 'Frequency (Hz)')
+ylabel( 'Amplitude (dB)')
 
 window_length = 512; 
 L = 32;

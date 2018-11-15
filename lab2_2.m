@@ -11,7 +11,8 @@ elseif (13.26 <= Asl) && (Asl <= 60)
 else 
     beta = 0.12438 * (Asl + 6.3);
 end
-
+deltaml = 0.389;
+L = (24*pi*(Asl+12))/(155*dml) + 1;
 % rectangular window
 %R = 256;
 %deltaml2 = (4 * pi)/R;
